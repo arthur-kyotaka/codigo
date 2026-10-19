@@ -130,7 +130,7 @@ if pagina == "Chat ExplorerBot":
         with st.chat_message("assistant"):
             with st.spinner("A consultar os arquivos orbitais..."):
                 resposta_stream = cliente.chat.completions.create(
-                    model="gemini-3.8-flash",
+                    model="gemini-1.5-flash",
                     messages=st.session_state["historico"],
                     stream=True
                 )
