@@ -92,7 +92,7 @@ st.markdown("""
 st.sidebar.title("🚀 Navegação Galática")
 pagina = st.sidebar.radio("Escolha a seção:", ["Chat ExplorerBot", "Política de Privacidade & Termos"])
 st.sidebar.divider()
-st.sidebar.info("Projeto acadômico desenvolvido para exploração de dados espaciais da NASA.")
+st.sidebar.info("Projeto acadêmico desenvolvido para exploração de dados espaciais da NASA.")
 
 
 # ==========================================
