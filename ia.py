@@ -105,7 +105,7 @@ if pagina == "Chat ExplorerBot":
 
     # CHAVE API
     cliente = OpenAI(
-        api_key="AQ.Ab8RN6L65LcC53aPy7leyQSjUAFcEmVmdScoctpToDae2_Ua4w",
+        api_key=st.secrets["GEMINI_API_KEY"],
         base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
     )
 
