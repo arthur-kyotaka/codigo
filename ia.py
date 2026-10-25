@@ -222,7 +222,7 @@ if pagina == "Chat ExplorerBot":
 
                     resposta_stream = (
                         cliente.chat.completions.create(
-                            model="gemini-3.8-flash",
+                            model="gemini-3.5-flash-lite",
                             messages=mensagens_api,
                             reasoning_effort="low",
                             stream=True
