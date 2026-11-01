@@ -121,7 +121,7 @@ if pagina == "Chat ExplorerBot":
     st.title("🛰️ ExplorerBot - NASA & Satellites")
 
     st.caption(
-        "Tire suas dúvidas sobre missões espaciais, "
+        "Get your questions about space missions answered."
         "satellites and astronomy."
     )
 
