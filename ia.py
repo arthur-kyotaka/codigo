@@ -6,7 +6,7 @@ from openai import OpenAI
 # ==========================================
 
 st.set_page_config(
-    page_title="Guia Galático",
+    page_title="galactic guide",
     page_icon="🛰️",
     layout="centered",
     initial_sidebar_state="expanded"
@@ -97,18 +97,18 @@ st.markdown("""
 st.sidebar.title("🚀 Navegação Galática")
 
 pagina = st.sidebar.radio(
-    "Escolha a seção:",
+    "Choose the section:",
     [
         "Chat ExplorerBot",
-        "Política de Privacidade & Termos"
+        "Privacy Policy & Terms"
     ]
 )
 
 st.sidebar.divider()
 
 st.sidebar.info(
-    "Projeto acadêmico desenvolvido para exploração "
-    "de dados espaciais da NASA."
+    "Academic project developed for exploration "
+    "from NASA spatial data."
 )
 
 
@@ -118,11 +118,11 @@ st.sidebar.info(
 
 if pagina == "Chat ExplorerBot":
 
-    st.title("🛰️ ExplorerBot - NASA & Satélites")
+    st.title("🛰️ ExplorerBot - NASA & Satellites")
 
     st.caption(
         "Tire suas dúvidas sobre missões espaciais, "
-        "satélites e astronomia."
+        "satellites and astronomy."
     )
 
     st.divider()
@@ -142,9 +142,9 @@ if pagina == "Chat ExplorerBot":
 
     except Exception:
         st.error(
-            "Não foi possível configurar a API do Gemini. "
-            "Verifique se GEMINI_API_KEY está configurada "
-            "corretamente nos Secrets do Streamlit."
+            "It was not possible to configure the Gemini API."
+            "Check if GEMINI_API_KEY is set "
+            "correctly in Streamlit Secrets."
         )
         st.stop()
 
@@ -174,7 +174,7 @@ if pagina == "Chat ExplorerBot":
     # ------------------------------------------
 
     texto_usuario = st.chat_input(
-        "Digite sua pergunta sobre o espaço..."
+        "Type your question about space..."
     )
 
     if texto_usuario:
@@ -217,7 +217,7 @@ if pagina == "Chat ExplorerBot":
 
             try:
                 with st.spinner(
-                    "A consultar os arquivos orbitais..."
+                    "Consulting the orbital archives..."
                 ):
 
                     resposta_stream = (
@@ -254,8 +254,8 @@ if pagina == "Chat ExplorerBot":
 
                 else:
                     st.warning(
-                        "A IA não retornou uma resposta. "
-                        "Tente enviar a pergunta novamente."
+                        "The AI ​​did not return a response."
+                        "Try sending the question again."
                     )
 
             # --------------------------------------
@@ -274,11 +274,11 @@ if pagina == "Chat ExplorerBot":
                 ):
 
                     st.warning(
-                        "🚀 O limite de requisições da IA "
-                        "foi atingido.\n\n"
-                        "Aguarde a renovação da cota ou "
-                        "verifique os limites do projeto "
-                        "no Google AI Studio."
+                       "🚀 The AI ​​request limit "
+                        "has been reached.\n\n"
+                        "Please wait for your quota to reset, or "
+                        "check your project limits "
+                        "in Google AI Studio."
                     )
 
                 elif (
@@ -289,16 +289,16 @@ if pagina == "Chat ExplorerBot":
                 ):
 
                     st.error(
-                        "🔐 Não foi possível autenticar "
-                        "a API. Verifique a chave, as "
-                        "permissões e a configuração do projeto."
+                        "🔐 Unable to authenticate "
+                        "the API. Please check the key, "
+                        "permissions, and project configuration."
                     )
 
                 else:
 
                     st.error(
-                        "Não foi possível obter uma resposta. "
-                        "Verifique sua conexão e tente novamente."
+                       "Unable to get a response. "
+                        "Check your connection and try again."
                     )
 
                 # Não exibe detalhes técnicos nem a chave
@@ -309,61 +309,57 @@ if pagina == "Chat ExplorerBot":
 # 5. POLÍTICA DE PRIVACIDADE E TERMOS
 # ==========================================
 
-elif pagina == "Política de Privacidade & Termos":
+elif pagina == "Privacy Policy & Terms":
 
-    st.title("📜 Política de Privacidade e Termos de Uso")
-
-    st.caption("Última atualização: Outubro de 2026")
-
+    st.title("📜 Privacy Policy and Terms of Use")
+    st.caption("Last updated: October 2026")
     st.divider()
 
-    st.subheader("1. Sobre o Projeto")
+    st.subheader("1. About the Project")
 
     st.write("""
-    O **ExplorerBot** é um assistente virtual interativo
-    desenvolvido por Arthur R. Santos como parte de um
-    trabalho acadêmico universitário da Universidade
-    Paulista (UNIP).
+    **ExplorerBot** is an interactive virtual assistant
+    developed by Arthur R. Santos as part of an
+    academic project at Universidade Paulista (UNIP).
 
-    Seu objetivo é fornecer informações educativas e
-    interativas sobre missões espaciais, satélites e
-    astronomia.
+    Its purpose is to provide educational and
+    interactive information about space missions,
+    satellites, and astronomy.
     """)
 
-    st.subheader("2. Privacidade e Dados dos Usuários")
+    st.subheader("2. Privacy and User Data")
 
     st.markdown("""
-    - **Histórico da sessão:** as conversas são mantidas
-      temporariamente no estado da sessão do Streamlit.
-      O código não grava o histórico em um banco de dados
-      permanente.
+    - **Session history:** conversations are kept
+      temporarily within Streamlit’s session state.
+      The code does not save the history to a permanent database.
 
-    - **Processamento por IA:** as mensagens selecionadas
-      são enviadas à API do Google Gemini para gerar respostas.
+    - **AI processing:** selected messages
+      are sent to the Google Gemini API to generate responses.
 
-    - **Dados pessoais:** não envie informações pessoais,
-      confidenciais ou sensíveis durante a interação.
+    - **Personal data:** do not submit any personal,
+      confidential, or sensitive information during your interaction.
     """)
 
     st.subheader(
-        "3. Direitos Autorais e Isenção de Responsabilidade"
+        "3. Copyright and Disclaimer"
     )
 
     st.markdown("""
-    - As informações astronômicas podem se basear em dados
-      públicos de agências espaciais, como a NASA.
+    - Astronomical information may be based on public data
+      from space agencies, such as NASA.
 
-    - O projeto tem finalidade educacional e acadêmica,
-      sem fins comerciais.
+    - The project is for educational and academic purposes
+      only, with no commercial intent.
 
-    - As respostas geradas por inteligência artificial
-      podem conter imprecisões. Verifique informações
-      importantes em fontes confiáveis.
+    - Responses generated by artificial intelligence
+      may contain inaccuracies. Please verify important
+      information using reliable sources.
     """)
 
     st.divider()
 
     st.success(
-        "Dúvidas sobre os termos? Entre em contato com "
-        "a equipe de desenvolvimento acadêmico."
+        "Questions about the terms? Contact the "
+        "academic development team."
     )
